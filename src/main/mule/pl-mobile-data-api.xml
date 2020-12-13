@@ -7,6 +7,10 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="af36e169-a1cb-42ff-83fe-eca138f3b634" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
+	<flow name="pl-mobile-data-apiFlow1" doc:id="e8c71d4e-dbba-4159-ae57-089ba20d72d0" >
+		<http:listener doc:name="Listener" doc:id="7c71f032-df9c-48ec-bc38-65070c9cfe6b" config-ref="HTTP_Listener_config" path="/checkToken"/>
+		<logger level="INFO" doc:name="Logger" doc:id="d1e33505-b40a-46ac-bc69-ce79336ce34f" />
+	</flow>
 	<flow name="pl-mobile-data-apiFlow" doc:id="5c365432-9e5e-46fa-b5f2-c0b221d945fd" >
 		<http:listener doc:name="Listener" doc:id="27fd3ead-66a0-47f1-97d2-489e61f0a71a" config-ref="HTTP_Listener_config" path="/test"/>
 		<logger level="INFO" doc:name="Logger" doc:id="979f3631-dcc9-486a-b781-e2121854aa3d" />
